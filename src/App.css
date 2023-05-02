@@ -1,0 +1,21 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
