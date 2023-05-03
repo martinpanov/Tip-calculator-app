@@ -1,0 +1,103 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding: 40px 25px 40px 40px;
+}
+
+input {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Space Mono', monospace;
+}
+
+input[type="number"] {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(189, 41%, 97%);
+    text-align: right;
+    padding-right: 15px;
+    border-radius: 5px;
+    border: 3px solid transparent;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]:focus,
+input[type="number"]:hover {
+    outline: none;
+    border: 3px solid hsl(172, 67%, 45%);
+    cursor: pointer;
+}
+
+label {
+    color: hsl(184, 14%, 56%);
+    margin-bottom: 10px;
+}
+
+.label-error {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-error .error {
+    margin: 0;
+    color: orange;
+}
+
+.bill-people .invalid {
+    border: 3px solid orange
+}
+
+.bill-people input {
+    width: 94.5%;
+    height: 50px;
+}
+
+div:first-child .bill-people {
+    margin-bottom: 40px;
+}
+
+.tip-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px 0px;
+    margin-bottom: 40px;
+}
+
+
+.tip-container input[type="number"] {
+    width: 105px;
+    height: 52px;
+    padding: 0px 10px;
+}
+
+.tip-container input[type="number"]::placeholder {
+    text-align: center;
+}
+
+.tip-container input[type="button"] {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border: none;
+    height: 55px;
+    width: 130px;
+}
+
+.tip-container input[type="button"]:hover,
+.tip-container input[type="button"]:focus {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+i {
+    color: hsl(184, 14%, 56%);
+    position: absolute;
+    padding: 20px 0px 20px 20px;
+    text-align: center;
+}

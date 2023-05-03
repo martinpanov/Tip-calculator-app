@@ -1,45 +1,37 @@
+import { IsZeroContext } from '../contexts/isZeroContext';
 import styles from './Calculator.module.css';
+import CalculatorForm from './CalculatorForm';
+import Result from './Result';
+import { useState } from 'react';
+
+export type DataForm = {
+    bill: number,
+    tip: number,
+    people: number;
+};
 
 export default function Calculator() {
+    const [formData, setFormData] = useState<DataForm>({
+        bill: 0,
+        tip: 0,
+        people: 0
+    });
+
+    const [isZeroBill, setIsZeroBill] = useState<boolean>(false);
+    const [isZeroPeople, setIsZeroPeople] = useState<boolean>(false);
+
+
     return (
-        <div className={styles['calculator']}>
-            <form>
-                <div className={styles['bill']}>
-                    <label htmlFor="bill">Bill</label>
-                    <input type="number" name="bill" id="bill" placeholder="0" />
-                </div>
-
-                <div className={styles['tip-container']}>
-                    <label htmlFor="tip">Select Tip %</label>
-                    <div className="tip-first-row">
-                        <input type="button" name="tip" value="5%" />
-                        <input type="button" name="tip" value="10%" />
-                        <input type="button" name="tip" value="15%" />
-                    </div>
-
-                    <div className={styles['tip-second-row']}>
-                        <input type="button" name="tip" value="25%" />
-                        <input type="button" name="tip" value="50%" />
-                        <input type="number" name="tip" placeholder="Custom" />
-                    </div>
-                </div>
-
-                <div className={styles['people']}>
-                    <label htmlFor="people">Number of People</label>
-                    <input type="number" />
-                </div>
-            </form>
-
-            <div className={styles['result']}>
-                <h2>Tip Amount <span>/ person</span></h2>
-                <p>$0.00</p>
-
-                <h2>Total <span>/ person</span></h2>
-                <p>$0.00</p>
-
-                <button>RESET</button>
+        <IsZeroContext.Provider value={{
+            isZeroBill,
+            setIsZeroBill,
+            isZeroPeople,
+            setIsZeroPeople
+        }}>
+            <div className={styles['calculator']}>
+                <CalculatorForm setFormData={setFormData} />
+                <Result {...formData} />
             </div>
-
-        </div>
+        </IsZeroContext.Provider>
     );
 }

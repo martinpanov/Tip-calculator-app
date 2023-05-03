@@ -1,0 +1,47 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    width: 47%;
+    margin: 30px 30px 30px 25px;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 15px;
+}
+
+h4 {
+    margin: 0;
+    color: hsl(185, 41%, 84%);
+}
+
+span {
+    color: hsl(184, 14%, 56%);
+}
+
+.result p {
+    margin: 20px 0px;
+    font-size: 40px;
+    color: hsl(172, 67%, 45%);
+}
+
+.result-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    font-weight: 700;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+button:hover,
+button:focus {
+    background-color: hsl(185, 41%, 84%);
+    cursor: pointer;
+}

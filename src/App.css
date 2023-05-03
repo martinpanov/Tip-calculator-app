@@ -14,8 +14,10 @@ body {
 }
 
 h1 {
+    color: hsl(186, 14%, 43%);
     text-align: center;
     margin-top: 0;
     margin-bottom: 80px;
     text-transform: uppercase;
+    letter-spacing: 5px;
 }
