@@ -89,7 +89,7 @@ div:first-child .bill-people {
 }
 
 .tip-container input[type="button"]:hover,
-.tip-container input[type="button"]:focus {
+.tip-container input.active {
     background-color: hsl(172, 67%, 45%);
     color: hsl(183, 100%, 15%);
     cursor: pointer;

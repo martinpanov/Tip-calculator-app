@@ -1,20 +1,20 @@
-import { IsZeroContext } from '../contexts/isZeroContext';
+import { IsZeroContext } from '../contexts/IsZeroContext';
 import styles from './Calculator.module.css';
 import CalculatorForm from './CalculatorForm';
 import Result from './Result';
 import { useState } from 'react';
 
-export type DataForm = {
-    bill: number,
-    tip: number,
-    people: number;
+export interface DataForm {
+    bill: number | '',
+    tip: number | '',
+    people: number | '';
 };
 
 export default function Calculator() {
     const [formData, setFormData] = useState<DataForm>({
-        bill: 0,
-        tip: 0,
-        people: 0
+        bill: '',
+        tip: '',
+        people: ''
     });
 
     const [isZeroBill, setIsZeroBill] = useState<boolean>(false);
@@ -29,8 +29,8 @@ export default function Calculator() {
             setIsZeroPeople
         }}>
             <div className={styles['calculator']}>
-                <CalculatorForm setFormData={setFormData} />
-                <Result {...formData} />
+                <CalculatorForm {...formData} setFormData={setFormData} />
+                <Result {...formData} setFormData={setFormData} />
             </div>
         </IsZeroContext.Provider>
     );
